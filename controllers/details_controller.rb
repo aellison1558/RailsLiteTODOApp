@@ -2,7 +2,6 @@ require_relative('./controller_base')
 require_relative('../models/todo_list.rb')
 require_relative('../models/todo_item.rb')
 require_relative('../models/detail.rb')
-require 'byebug'
 
 class DetailsController < ControllerBase
 
