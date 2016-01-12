@@ -1,0 +1,14 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/todos" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Title
+    <input type="text" name="list[title]" value="<%= @list.title %>">
+  </label>
+
+  <input type="submit" value="Add Todo List!">
+</form>

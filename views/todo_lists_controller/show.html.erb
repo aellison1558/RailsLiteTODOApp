@@ -1,0 +1,18 @@
+<h1><%= @list.title %></h1>
+
+<a href='/todos'>Back to Lists</a>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= item.title %>
+      <ul>
+        <% item.details.each do |detail| %>
+          <li><%= detail.body %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/items/new">New List Item</a>

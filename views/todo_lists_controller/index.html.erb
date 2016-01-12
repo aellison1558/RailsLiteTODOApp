@@ -1,0 +1,14 @@
+<h1>ToDo Lists:</h1>
+
+<% if flash[:notice] %>
+  Notice: <%= flash[:notice] %>
+<% end %>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      Title: <a href=<%= "/todos/" + list.id.to_s %>><%= list.title %></a>
+    </li>
+  <% end %>
+</ul>
+<a href="/todos/new">New Todo List!</a>

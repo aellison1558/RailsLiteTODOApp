@@ -1,0 +1,24 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/items" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Title
+    <input type="text" name="item[title]" value="<%= @item.title %>">
+  </label>
+
+  <label>List
+    <select name="item[list_id]">
+      <% @lists.each do |list| %>
+      <option value=<%= list.id %>><%= list.title %></option>
+      <% end %>
+
+    </select>
+  </label>
+
+  <input type="submit" value="Add Todo List Item!">
+</form>
